@@ -1,0 +1,24 @@
+package com.shakhawat.springbootoauthzte;
+
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class DashboardController {
+
+    @GetMapping("/dashboard")
+    public String dashboard(Authentication authentication, HttpServletRequest request, Model model) {
+
+        if(authentication.getPrincipal() instanceof UserDetails userDetails) {
+            model.addAttribute("username", userDetails.getUsername());
+            model.addAttribute("roles", userDetails.getAuthorities());
+        }
+
+        return "pages/dashboard";
+    }
+
+}

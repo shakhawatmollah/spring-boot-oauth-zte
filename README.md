@@ -26,7 +26,7 @@ It supports both traditional form-based login and OAuth2 login via Google and Gi
 
 1. Clone the repository
 ```bash
-git clone https://github.com/shakhawatmollah/spring-boot-oauth-zte
+git clone https://github.com/shakhawatmollah/spring-boot-oauth-zte.git
 cd spring-boot-oauth-zte
 ```
 
